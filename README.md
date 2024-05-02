@@ -13,16 +13,16 @@ __In this, I will take you through setting up a three node mysql innodb cluster 
 - __The cluster has three nodes or containers in this case. A single primary node which has read-write privileges. Two secondaries in which they have read-only privileges.__
 
 __Lets Configure setup.sql file.__
-To setup a cluster we create an user clusteradmin which has all privileges. This user is created on all nodes when the setup is initiated.
+- To setup a cluster we create an user clusteradmin which has all privileges. This user is created on all nodes when the setup is initiated.
 
       CREATE USER 'clusteradmin'@'%' IDENTIFIED BY 'cladmin';
       GRANT ALL privileges ON *.* TO 'clusteradmin'@'%' with grant option;
       reset master;
 
-mysql-server:8.0 is used and a sql data file is used to perform some initial setup. The file is copied to docker-entrypoint-initdb.d which will ensure to execute the content of the file.
+- mysql-server:8.0 is used and a sql data file is used to perform some initial setup. The file is copied to docker-entrypoint-initdb.d which will ensure to execute the content of the file.
 
 __Lets Write Dockerfile.__
-To provision the mysql cluster we first require three standalone mysql servers which we will use docker in our case. To being we define a dockerfile which will be used as our base image
+- To provision the mysql cluster we first require three standalone mysql servers which we will use docker in our case. To being we define a dockerfile which will be used as our base image
 
       FROM mysql/mysql-server:8.0
       COPY ./setup.sql /docker-entrypoint-initdb.d
