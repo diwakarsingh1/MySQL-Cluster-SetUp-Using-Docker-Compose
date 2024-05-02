@@ -7,3 +7,7 @@
 
 ![](/images/cluster.png)
 
+The cluster has three nodes or containers in this case.
+A single primary node which has read-write privileges.
+Two secondaries in which they have read-only privileges.
+
