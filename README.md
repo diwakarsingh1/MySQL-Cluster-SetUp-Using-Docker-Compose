@@ -18,3 +18,11 @@ To setup a cluster we create an user clusteradmin which has all privileges. This
     CREATE USER 'clusteradmin'@'%' IDENTIFIED BY 'cladmin';
     GRANT ALL privileges ON *.* TO 'clusteradmin'@'%' with grant option;
     reset master;
+
+
+__Lets Write Dockerfile.__
+To provision the mysql cluster we first require three standalone mysql servers which we will use docker in our case. To being we define a dockerfile which will be used as our base image
+
+    FROM mysql/mysql-server:8.0
+    COPY ./setup.sql /docker-entrypoint-initdb.d
+    EXPOSE 3306
