@@ -133,4 +133,4 @@ __Finally a docker-compose file is used to create the docker containers.__
 - The configureInstance command must be run three times for each container with the respective container name , this can be run from the same mysql shell .
 - On running the checkInstanceConfiguration we notice that it results in a success now.
 
-![](/images/status-ok.webp
+![](/images/status-ok.webp)
