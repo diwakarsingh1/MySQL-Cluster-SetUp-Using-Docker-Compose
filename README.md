@@ -105,3 +105,4 @@ __Finally a docker-compose file is used to create the docker containers.__
 
       mysql -uclusteradmin -p'cladmin'; // login as cluster admin
 
+![](/images/cladmin.webp)
