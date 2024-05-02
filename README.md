@@ -70,3 +70,10 @@ To provision the mysql cluster we first require three standalone mysql servers w
         db-data3:
           driver: local
     
+- Three docker containers have been setup which have the root password as password with three different port number mappings to the host system and default authentication plugin as password.
+
+- Ensure to set a volume for the containers as this is where mysql stores its metadata.
+
+- __Start the three servers by running the docker compose command.__
+
+      docker-compose up -d
