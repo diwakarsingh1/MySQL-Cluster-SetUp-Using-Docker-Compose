@@ -106,3 +106,16 @@ __Finally a docker-compose file is used to create the docker containers.__
       mysql -uclusteradmin -p'cladmin'; // login as cluster admin
 
 ![](/images/cladmin.webp)
+
+- Considering one of the nodes as primary use mysqlsh to initiate the cluster creation process.
+- Login to mysql shell using clusteradmin user.
+
+      mysqlsh -uclusteradmin -p'cladmin'
+
+![](/images/cluster-login.webp)
+
+- The first step is to check the node configuration if it follows the required requirements.
+- On same shell run the below command replacing container names with the names of the docker containers since each container has connectivity to each other.
+
+      dba.checkInstanceConfiguration("clusteradmin@{container name}:port")
+
