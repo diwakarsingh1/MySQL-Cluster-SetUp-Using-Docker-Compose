@@ -98,3 +98,10 @@ __Finally a docker-compose file is used to create the docker containers.__
 - Check clusteradmin user present or not.
 
       SELECT user,host FROM mysql.user;     // list all users and host
+
+![](/images/clusteradmin.webp)
+
+- Login as clusteradmin user to ensure user has been setup with correct credentials.
+
+      mysql -uclusteradmin -p'cladmin'; // login as cluster admin
+
