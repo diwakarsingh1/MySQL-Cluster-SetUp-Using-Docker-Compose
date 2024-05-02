@@ -9,12 +9,12 @@ __In this, I will take you through setting up a three node mysql innodb cluster 
 
 
 - __To provision the mysql cluster we first require three standalone mysql servers which we will use docker in our case.__
+
 - __The cluster has three nodes or containers in this case. A single primary node which has read-write privileges. Two secondaries in which they have read-only privileges.__
 
-
-
-
 __Lets Configure setup.sql file.__
+To setup a cluster we create an user clusteradmin which has all privileges. This user is created on all nodes when the setup is initiated.
 
-
-
+    CREATE USER 'clusteradmin'@'%' IDENTIFIED BY 'cladmin';
+    GRANT ALL privileges ON *.* TO 'clusteradmin'@'%' with grant option;
+    reset master;
