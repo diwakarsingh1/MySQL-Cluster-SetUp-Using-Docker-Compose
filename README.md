@@ -30,6 +30,8 @@ __Lets Write Dockerfile.__
 
 __Finally a docker-compose file is used to create the docker containers.__
 
+- docker-compose.yml
+
       version: "3.3"
       services:
         mysql-dev1:
@@ -84,8 +86,13 @@ __Finally a docker-compose file is used to create the docker containers.__
 - Exec into one of the nodes as root user and view the user,host present to ensure clusteradmin user is present.
 
 - Exec into one of the nodes as root user.
+
       docker exec -it {container name} /bin/bash   // exec into container
+
 - LogIn into MySQL.
+
       mysql -uroot -p'password'  // Login as root user
+
 - Check clusteradmin user present or not.
+
       SELECT user,host FROM mysql.user;     // list all users and host
