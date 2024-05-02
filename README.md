@@ -28,3 +28,44 @@ To provision the mysql cluster we first require three standalone mysql servers w
     COPY ./setup.sql /docker-entrypoint-initdb.d
     EXPOSE 3306
 
+- __Finally a docker-compose file is used to create the docker containers.__
+
+    version: "3.3"
+    services:
+      mysql-dev1:
+          build: .
+          command: --default-authentication-plugin=mysql_native_password
+          environment:
+            MYSQL_ROOT_PASSWORD: password
+          volumes:
+          - ./db-data1:/var/lib/mysql
+          ports:
+          - "3305:3306"
+  
+      mysql-dev2:
+          build: .
+          command: --default-authentication-plugin=mysql_native_password
+          environment:
+            MYSQL_ROOT_PASSWORD: password
+          ports:
+          - "3307:3306"
+          volumes:
+          - ./db-data2:/var/lib/mysql
+  
+      mysql-dev3:
+          build: .
+          command: --default-authentication-plugin=mysql_native_password
+          environment:
+            MYSQL_ROOT_PASSWORD: password
+          ports:
+          - "3308:3306"
+          volumes:
+          - ./db-data3:/var/lib/mysql
+
+    volumes:
+      db-data1:
+        driver: local
+      db-data2:
+        driver: local
+      db-data3:
+        driver: local
