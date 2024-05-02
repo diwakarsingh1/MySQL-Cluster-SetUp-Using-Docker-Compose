@@ -7,7 +7,14 @@ __In this, I will take you through setting up a three node mysql innodb cluster 
 
 ![](/images/cluster.png)
 
-- __The cluster has three nodes or containers in this case.
-A single primary node which has read-write privileges.
-Two secondaries in which they have read-only privileges.__
+
+- __To provision the mysql cluster we first require three standalone mysql servers which we will use docker in our case.__
+- __The cluster has three nodes or containers in this case. A single primary node which has read-write privileges. Two secondaries in which they have read-only privileges.__
+
+
+
+
+__Lets Configure setup.sql file.__
+
+
 
