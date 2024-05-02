@@ -128,3 +128,9 @@ __Finally a docker-compose file is used to create the docker containers.__
       dba.configureInstance("clusteradmin@{container name}:port")
 
 ![](/images/setting-status.webp)
+
+- This will setup the needed environment variables and settings so that each container can act as an innodb node.
+- The configureInstance command must be run three times for each container with the respective container name , this can be run from the same mysql shell .
+- On running the checkInstanceConfiguration we notice that it results in a success now.
+
+![](/images/status-ok.webp
