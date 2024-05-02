@@ -1,6 +1,6 @@
 # MySQL-Cluster-SetUp-Using-Docker-Compose
 
-![](/images/MySQL-Docker.png)
+![](/images/MySQL-Docker.jpg)
 
 In this, I will take you through setting up a three node mysql innodb cluster using only docker containers which can be implemented anywhere.
 Mysql is one of the most prominent and popular database solutions adopted by corporate and companies for their applications or business needs.
