@@ -28,7 +28,7 @@ __Lets Write Dockerfile.__
       COPY ./setup.sql /docker-entrypoint-initdb.d
       EXPOSE 3306
 
-- __Finally a docker-compose file is used to create the docker containers.__
+__Finally a docker-compose file is used to create the docker containers.__
 
       version: "3.3"
       services:
@@ -77,3 +77,15 @@ __Lets Write Dockerfile.__
 - __Start the three servers by running the docker compose command.__
 
       docker-compose up -d
+
+
+- This starts up three docker containers which will be our mysql servers also parallely creating three images for the containers.
+
+- Exec into one of the nodes as root user and view the user,host present to ensure clusteradmin user is present.
+
+- Exec into one of the nodes as root user.
+      docker exec -it {container name} /bin/bash   // exec into container
+- LogIn into MySQL.
+      mysql -uroot -p'password'  // Login as root user
+- Check clusteradmin user present or not.
+      SELECT user,host FROM mysql.user;     // list all users and host
