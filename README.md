@@ -81,6 +81,8 @@ __Finally a docker-compose file is used to create the docker containers.__
       docker-compose up -d
 
 
+![](/images/docker-containers.webp)
+
 - This starts up three docker containers which will be our mysql servers also parallely creating three images for the containers.
 
 - Exec into one of the nodes as root user and view the user,host present to ensure clusteradmin user is present.
