@@ -119,3 +119,12 @@ __Finally a docker-compose file is used to create the docker containers.__
 
       dba.checkInstanceConfiguration("clusteradmin@{container name}:port")
 
+![](/images/status-check.webp)
+
+- From the single mysqlsh shell the other nodes can also be checked by replacing the container names with corresponding container names.
+- Each container is then configured so that they can act as part of an innodb cluster.
+- On same shell run the below command replacing container names with the names of the docker containers.
+
+      dba.configureInstance("clusteradmin@{container name}:port")
+
+![](/images/setting-status.webp)
