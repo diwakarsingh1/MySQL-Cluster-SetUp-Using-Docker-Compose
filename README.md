@@ -19,6 +19,7 @@ To setup a cluster we create an user clusteradmin which has all privileges. This
     GRANT ALL privileges ON *.* TO 'clusteradmin'@'%' with grant option;
     reset master;
 
+mysql-server:8.0 is used and a sql data file is used to perform some initial setup. The file is copied to docker-entrypoint-initdb.d which will ensure to execute the content of the file.
 
 __Lets Write Dockerfile.__
 To provision the mysql cluster we first require three standalone mysql servers which we will use docker in our case. To being we define a dockerfile which will be used as our base image
@@ -26,3 +27,4 @@ To provision the mysql cluster we first require three standalone mysql servers w
     FROM mysql/mysql-server:8.0
     COPY ./setup.sql /docker-entrypoint-initdb.d
     EXPOSE 3306
+
