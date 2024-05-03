@@ -147,3 +147,4 @@ __Creating the cluster.__
 
       cluster.status()
 
+![](/images/cluster-status.webp)
