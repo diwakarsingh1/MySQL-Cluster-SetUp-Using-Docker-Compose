@@ -42,7 +42,7 @@ __Finally a docker-compose file is used to create the docker containers.__
             volumes:
             - ./db-data1:/var/lib/mysql
             ports:
-            - "3305:3306"
+            - "3306:3306"
   
         mysql-dev2:
             build: .
