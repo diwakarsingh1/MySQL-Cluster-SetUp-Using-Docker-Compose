@@ -160,3 +160,31 @@ __Creating the cluster.__
 - Running cluster.status() after each step will allow us to understand the cluster status.
 
 ![](/images/all-node.webp)
+
+- We have a three node mysql with docker setup with one primary and two secondaries. Primary is used for all write operations which is replicated to the secondaries.
+
+__Features of the mysql cluster.__
+
+__1. Group Replication__
+- As per the architecture the primary acts as the node which is responsible for writes in the database which is replicated to the secondaries.
+
+- Login to mysql primary node and enter data which is replicated to other secondaries.
+
+__2. Automatic fail over__
+- If for any case one the secondary nodes fails the cluster is still up and running , however if a primary node fails a new primary is elected and operations continue.
+- We go ahead and stop and start the primary node container.
+- In such situation the node goes to status missing and another node is selected as primary.
+
+![](/images/missing.webp)
+
+- Once node comes back up it rejoins the cluster.
+
+![](/images/rejoin.webp)
+
+__Errors or debugging.__
+
+- In some cases it may be required to perform a cluster rescan on node addition or after a fail over.
+- Run the command.
+
+      var cluster = dba.getCluster()  // if cluster var is not set
+      cluster.rescan()
