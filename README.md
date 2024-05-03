@@ -148,3 +148,10 @@ __Creating the cluster.__
       cluster.status()
 
 ![](/images/cluster-status.webp)
+
+- We have a single node cluster in which we need to add the other two containers.
+- Add a different instance/container using the addInstance command.
+
+      cluster.addInstance("clusteradmin@{container name}:{port}")
+
+![](/images/add-container.webp)
