@@ -155,3 +155,8 @@ __Creating the cluster.__
       cluster.addInstance("clusteradmin@{container name}:{port}")
 
 ![](/images/add-container.webp)
+
+- This command has to be used to add the other two containers to the primary node.
+- Running cluster.status() after each step will allow us to understand the cluster status.
+
+![](/images/all-node.webp)
