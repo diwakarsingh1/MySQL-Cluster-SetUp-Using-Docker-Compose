@@ -134,3 +134,16 @@ __Finally a docker-compose file is used to create the docker containers.__
 - On running the checkInstanceConfiguration we notice that it results in a success now.
 
 ![](/images/status-ok.webp)
+
+__Creating the cluster.__
+
+- On mysql shell initiate cluster creation.
+
+      var cluster = dba.createCluster("{cluster name}")
+
+![](/images/cluster-create.webp)
+
+- Check cluster status.
+
+      cluster.status()
+
