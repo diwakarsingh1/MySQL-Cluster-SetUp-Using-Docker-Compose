@@ -188,3 +188,5 @@ __Errors or debugging.__
 
       var cluster = dba.getCluster()  // if cluster var is not set
       cluster.rescan()
+
+Voila!💥 Your MySQL-Cluster-SetUp-Using-Docker-Compose is ready.
